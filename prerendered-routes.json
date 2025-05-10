@@ -1,0 +1,10 @@
+{
+  "routes": [
+    "/contacto",
+    "/experiencia",
+    "/habilidades-blandas",
+    "/habilidades-tecnicas",
+    "/hobbies",
+    "/home"
+  ]
+}
