@@ -1,0 +1,16 @@
+<section class="py-5">
+  <h2 class="text-center mb-4">Habilidades Blandas</h2>
+  <div *ngIf="habilidadesBlandas$ | async as habilidadesObj; else cargandoSkills">
+    <div *ngIf="habilidadesObj && (habilidadesObj | keyvalue).length > 0; else sinSkills" class="list-group">
+      <div *ngFor="let habilidad of habilidadesObj | keyvalue" class="list-group-item">
+        <strong>{{ habilidad.key }}:</strong>
+        <p style="white-space: pre-line;">{{ habilidad.value }}</p> </div>
+    </div>
+    <ng-template #sinSkills>
+      <p class="text-center">No hay habilidades blandas para mostrar.</p>
+    </ng-template>
+  </div>
+  <ng-template #cargandoSkills>
+    <p class="text-center">Cargando habilidades blandas...</p>
+  </ng-template>
+</section>

@@ -1,0 +1,16 @@
+<section class="py-5">
+  <h2 class="text-center mb-4">Hobbies</h2>
+  <div *ngIf="hobbies$ | async as hobbiesObj; else cargandoHobbies">
+    <div *ngIf="hobbiesObj && (hobbiesObj | keyvalue).length > 0; else sinHobbies" class="list-group">
+      <div *ngFor="let hobbie of hobbiesObj | keyvalue" class="list-group-item">
+        <strong>{{ hobbie.key }}:</strong> {{ hobbie.value }}
+      </div>
+    </div>
+    <ng-template #sinHobbies>
+      <p class="text-center">No hay hobbies para mostrar.</p>
+    </ng-template>
+  </div>
+  <ng-template #cargandoHobbies>
+    <p class="text-center">Cargando hobbies...</p>
+  </ng-template>
+</section>
